@@ -36,7 +36,10 @@ function reverseString(str) {
 
 function displayContent(dataURL, mimeType) {
     var dataContent = dataURL.split(',')[1];
-    var mimeTypeX = mimeType.split('/')[0];
+    var mimeTypeX = null;
+    if(mimeType !== null){
+        mimeTypeX = mimeType.split('/')[0];
+    }
     switch (mimeTypeX) {
         case "image":
             document.getElementById('result').innerHTML = "<img src=" + dataURL + ">";
